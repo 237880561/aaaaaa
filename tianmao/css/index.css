@@ -372,6 +372,7 @@ position: relative;
     width: 234px;
     height: 316px;
     display: block;
+ 
 }
 .list-title-more{
     float: right;
@@ -385,6 +386,27 @@ position: relative;
     width: 18px;
     height: 18px;
 }
+.brand-list{
+    float: left;
+    background: #fff;
+}
+.brand-list-2{
+    width: 485px;
+    margin-left: 12px;
+}
+.brand-list-2 .brand-list-title{
+    width: 485px;
+}
+.brand-list-2 .brand-list-img img{
+    width: 485px;
+}
+.brand-list-img:hover img{
+    opacity: 0.8;
+}
+.list-title-zz{
+  vertical-align: 5px;
+}
+
 
 
 
