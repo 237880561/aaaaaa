@@ -5,7 +5,7 @@
 } 
 ul{
 
-list-style: none;
+  list-style: none;
 
 }
 a{
@@ -103,14 +103,14 @@ body{
   position: relative;
 }
 .arrow{
-width: 0;
-height: 0;
-border: 3px solid transparent;
-border-top-color: #999;
-position: absolute;
-right: 7px;
-top: 20px;
-transition: transform  0.2s ease;
+  width: 0;
+  height: 0;
+  border: 3px solid transparent;
+  border-top-color: #999;
+  position: absolute;
+  right: 7px;
+  top: 20px;
+  transition: transform  0.2s ease;
 
 }
 .header-list .list-menu:hover .arrow{
