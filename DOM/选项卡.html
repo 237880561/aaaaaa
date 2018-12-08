@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .container ul {
+            overflow: hidden;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 80px;
+            height: 30px;
+            background: red;
+            margin-right: 4px;
+        }
+
+        li.selected {
+            background: greenyellow;
+        }
+
+        #content div {
+            width: 250px;
+            height: 100px;
+            background: burlywood;
+            display: none;
+        }
+
+        #content div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="btn-box">
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+        <div id="content">
+            <div class="active">content1111</div>
+            <div>content2222</div>
+            <div>content3333</div>
+
+        </div>
+
+    </div>
+    <script>
+        var aL = document.getElementsByTagName('li');
+         var ocontent = document.getElementById('content');
+         var aD = ocontent.getElementsByTagName('div');
+         
+        for (var i = 0; i < aL.length; i++) {
+            aL[i].idx = i;
+
+            aL[i].onclick = function () {
+                for (var k = 0; k < aL.length; k++) {
+                    aL[k].className = "null";
+                    aD[k].className = "null";
+                }
+
+                this.className = "selected";
+                 aD[this.idx].className = "active";
+                
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

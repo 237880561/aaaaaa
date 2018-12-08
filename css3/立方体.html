@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body{
+            background: black;
+        }
+        #con{
+            width: 200px;
+            height: 200px;
+            margin:  50px auto;
+            perspective: 800px;
+            position: relative;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.5);
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            
+            
+
+        }
+        #con1{
+             -webkit-transform: rotateX(90deg) translateZ(100px);
+        }
+        #con2{
+            -webkit-transform:  translateZ(100px);
+            z-index:1;
+        }
+        #con3{
+            -webkit-transform: rotateY(90deg) translateZ(100px);
+        }
+        #con4{
+            -webkit-transform: rotateY(180deg) translateZ(100px);
+        }
+        #con5{
+            -webkit-transform: rotateY(-90deg) translateZ(100px);
+        }
+        #con6{
+            -webkit-transform: rotateX(-90deg) translateZ(100px);
+        }
+
+    
+    </style>
+</head>
+<body>
+
+
+    <div id="con">
+        <div id="con1">1</div>
+        <div id="con2">2</div>
+        <div id="con3">3</div>
+        <div id="con4">4</div>
+        <div id="con5">5</div>
+        <div id="con6">6</div>
+    </div>
+    
+</body>
+</html>

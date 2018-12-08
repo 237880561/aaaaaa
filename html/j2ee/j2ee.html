@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .con-table{
+            position: absolute;
+            left:40%;
+            /* border: 1px solid red; */
+
+        }
+        .con-zz{
+            margin-left: 30%;
+        }
+        .aa{
+         align: right;
+        }
+     
+    </style>
+</head>
+<body>
+    <script>
+    function checkAll (){
+        var name=document.getElementById("name");
+        if(name.value ==""){
+            alert("name no")
+            return false;
+        
+        }
+        var name=document.getElementById("bb");
+        if(name.value ==""){
+            alert("bb no")
+            return false;
+        
+        }
+        var name=document.getElementById("cc");
+        if(name.value ==""){
+            alert("cc no")
+            return false;
+        
+        }
+        var name=document.getElementById("dd");
+        if(name.value ==""){
+            alert("dd no")
+            return false;
+        
+        }
+        //var name1=document.getElementById("ee");
+        if(!document.getElementById("ee").checked && !document.getElementById("rr").checked)
+        {
+            alert("ee rr no")
+            return false;
+        }
+        //var name2=document.getElementById("rr");
+        //if((name1.value =="" ||name1.value==null)&&(name2.value =="" ||name2.value==null)){
+           // alert("ee rr no")
+            //return false;
+        
+        //}
+    }
+    </script>
+    <form action="#" method="POST" onsubmit="return checkAll();">
+    
+   <table class="con-table" border="1">
+       
+    <tr>
+        <td align=right>
+            <label class="aa">用户名称：</label>
+        </td>
+        <td>
+                <input type="text" id="name">
+        </td>
+    </tr>
+    <tr>
+        <td align=right>
+            <span class="aa">登录密码：</span>
+        </td>
+        <td>
+                <input type="password" id="bb">
+        </td>
+    </tr>
+    <tr>
+        <td align=right>
+            <span class="aa">密码确认：</span>
+        </td>
+        <td>
+                <input type="password" id="cc">
+        </td>
+    </tr>
+    <tr>
+        <td align=right>
+            <span class="aa">密码保护问题：</span>
+           
+        </td>
+        <td>
+                <select>
+                        <option value="">你最喜欢的宠物</option>
+                        <option value="">你最喜欢的动漫</option>
+                        <option value="">你最喜欢的明星</option>
+                    </select>
+        </td>
+    </tr>
+    <tr>
+        <td align=right>
+            <span class="aa">问题答案：</span>
+        </td>
+        <td>
+                <input type="text" id="dd">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="aa">性别：</span>
+           
+        </td>
+        <td>
+                <input type="radio" name="sex" id="ee">男
+                <input type="radio" name="sex" id="rr">女
+        </td>
+    </tr>
+    <tr >
+        <td colspan="2">
+            
+            <button class="con-zz">注册</button>
+            <button>重写</button>
+            
+        </td>
+     
+      
+    </tr>
+   </table>
+</form>
+
+
+</body>
+</html>
