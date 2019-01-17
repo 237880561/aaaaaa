@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 750px;
+            height: 291px;
+            margin: 100px auto; 
+            position: relative;
+           
+          
+
+        }
+
+        .img-box img {
+            /* display: none;  */
+             float: left;
+        
+        }
+
+        .img-box .active {
+            margin-left: 750px;
+             
+
+        }
+        .img-box{
+           width: 5000px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        #btn-box li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        #btn-box .selected {
+            background: #ff0036;
+        }
+
+        #btn-box {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .btn-left span {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-left {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+        }
+       
+    </style>
+</head>
+
+<body style="height: 2000px;">
+    
+    <div id="container">
+        <div class="img-box">
+            <img class="active" src="../DOM/img/1.jpg" alt="">
+            <img src="../DOM/img/2.jpg" alt="">
+            <img src="../DOM/img/3.jpg" alt="">
+            <img src="../DOM/img/4.jpg" alt="">
+            <img src="../DOM/img/5.jpg" alt="">
+
+        </div>
+        <ul id="btn-box">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+
+
+
+        </ul>
+        <div class="btn-left">
+            <span id="back">&lt</span>
+            <span id="next">&gt</span>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        var aa = document.getElementsByTagName('li');
+        var bb = document.getElementsByTagName('img');
+        var cc = document.getElementById('next');
+        var dd = document.getElementById('back');
+        var all = document.getElementById('container');
+        function change(idx) {
+            for (var k = 0; k < aa.length; k++) {
+                aa[k].className = 'null';
+                bb[k].className = 'null';
+            }
+            aa[idx].className = 'selected';
+            bb[idx].className = 'active';
+        }
+
+        var inow = 0; var timer ;
+
+        for (var i = 0; i < aa.length; i++) {
+            aa[i].idx = i;
+            aa[i].onclick = function () {
+                change(this.idx);
+                inow = this.idx;
+            }
+        }
+
+        cc.onclick = function () {
+            inow++;
+            if(inow>4)
+           {inow = 0
+            change(inow);}
+           else change(inow);
+        }
+        dd.onclick = function () {
+            inow--;
+            if(inow<0)
+           {inow = 4
+            change(inow);}
+           else change(inow);
+        }
+        timer =  setInterval(function(){
+            cc.onclick();
+        },2000);
+        all.onmouseover = function(){
+            clearInterval(timer);
+        }
+        all.onmouseout = function(){
+            timer =  setInterval(function(){
+            cc.onclick();
+        },2000);
+        }
+
+
+      
+
+
+    </script>
+
+</body>
+
+</html>
