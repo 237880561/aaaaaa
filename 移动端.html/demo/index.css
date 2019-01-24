@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    touch-action: none;
 }
 .hide{
     display: none;
@@ -152,6 +153,24 @@
 @keyframes moveScale{
     from{
         transform: scale(0);
+    }
+}
+.moveToTop{
+    animation: moveToTop 0.6s ease forwards;
+}
+@keyframes moveToTop{
+  
+    to{
+        transform: translateY(-100%);
+    }
+}
+.moveToBottom{
+    animation: moveToBottom 0.6s ease forwards;
+}
+@keyframes moveToBottom{
+  
+    to{
+        transform: translateY(100%);
     }
 }
 

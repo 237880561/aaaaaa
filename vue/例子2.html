@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .chushi{
+          width: 300px;
+          height: 50px;
+          margin-bottom: 20px;
+          margin-left:300px;
+          background: green;
+          line-height: 50px;
+          list-style: none;
+
+        }
+        .active{
+            background: red;
+        }
+        .aa{
+            margin-left:210px;
+        }
+       
+        
+    
+    </style>
+    
+</head>
+<body>
+    
+    <ul id="app">
+        <li v-for='(obj,index) in list' :class="{active:obj.isA,chushi:true}" @click='change(obj)'> {{obj.val}}<span class="aa">  
+                {{obj.price}}
+               </span></li>
+        {{count}}
+      
+    </ul>
+        <script src="vue.js"></script>
+        <script>
+            var vm =new Vue({
+                el:('#app'),
+                data:{
+                    list:[
+                        {
+                            val:'aaa',
+                            isA:false,
+                            price:123
+                        },
+                        {
+                            val:'bbb',
+                            isA:false,
+                            price:234
+                        },
+                        {
+                            val:'ccc',
+                            isA:false,
+                            price:345
+                        },
+                        {
+                            val:'ddd',
+                            isA:false,
+                            price:456
+                        },
+                        {
+                            val:'eee',
+                            isA:false,
+                            price:567
+                        }
+                    ],
+                    count:0
+
+
+
+                },
+                methods: {
+                    change(obj){
+                       
+                        obj.isA=!obj.isA;
+                        if(obj.isA)
+                        this.count+=obj.price
+                        else
+                        this.count-=obj.price
+
+                        
+
+                    }
+                  
+                    
+                }
+            })
+        
+        
+        </script>
+
+
+    
+</body>
+</html>

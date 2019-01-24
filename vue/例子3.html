@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+   <div  id="app">
+    <input  @click='fn()' type="checkbox" v-model="isCheck">是否需要额外付费设施
+    <ul v-if='isCheck' >
+        <li><input  @click='a(100)' type="checkbox" v-model="hobby" value="沙发100">沙发100</li>
+        <li><input  @click='b(200)' type="checkbox" v-model="hobby" value="床200">床200</li>
+        <li><input   @click='c(300)'type="checkbox" v-model="hobby" value="wifi300">wifi300</li>
+    </ul>
+    <ul>
+          <span>费用信息</span>
+        <li>群里花园豪华型400</li>
+        <li v-for='ho in hobby'>{{ho}}</li>      
+    </ul>  
+    {{count}} 
+   </div>
+    <script src="vue.js"></script>
+    <script>  
+                   
+                        
+                    
+    
+         var vm =new Vue({
+                el:('#app'),
+                data:{
+                    isCheck:false,
+                    hobby:[],
+                    count:400,
+                    aa:false,
+                    bb:false,
+                    cc:false   
+                },
+                methods: {   
+                    // a(num){
+                    //     this.fff(num,this.aa)
+                    // },
+                    // b(num){
+                    //     this.fff(num,this.bb)
+                    // },
+                    // c(num){
+                    //     this.fff(num,this.cc)
+                    // },
+                    // fff(num,tt){
+                    //     tt=!tt
+                    //     if(tt)
+                    //     this.count+=num
+                    //     else
+                    //     this.count-=num
+
+                    // }
+                    a(num){
+                       this.aa=!this.aa
+                        if(this.aa)
+                        this.count+=num
+                        else
+                        this.count-=num
+                    },
+                    b(num){ 
+                        this.bb=!this.bb
+                        if(this.bb)
+                        this.count+=num
+                        else
+                        this.count-=num
+                    },
+                    c(num){ 
+                        this.cc=!this.cc
+                       if(this.cc)
+                        this.count+=num
+                        else
+                        this.count-=num
+                    },
+                    fn(){
+                        this.count=400
+                    this.hobby.splice(0);
+                }
+              
+                   
+                }
+            })
+
+    
+    
+    
+    </script>
+    
+</body>
+</html>
