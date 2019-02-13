@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <zujian name='111'>
+        <h2>这是内容</h2>
+        <p>事实上四十四十三</p>
+    </zujian>
+    </div>
+    <script type="text/template" id="temp">
+        
+        <div>
+                <h1>{{name}}</h1>
+                <slot>内容</slot>
+                
+        </div>
+       
+
+    
+    </script>
+        
+
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            components:{
+                zujian:{
+                    template:'#temp',
+                    props:['name']
+
+
+                }
+
+            }
+
+
+
+        })
+    
+    
+    
+    
+    </script>
+
+    
+</body>
+</html>
