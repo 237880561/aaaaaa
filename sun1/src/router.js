@@ -4,6 +4,7 @@ import Movie from './views/Movie/Movie.vue'
 import Music from './views/Music/Music.vue'
 import Book from './views/Book/Book.vue'
 import Mag from './views/Mag/Mag.vue'
+import Musiclist from './views/Music/Musiclist.vue'
 
 Vue.use(Router)
 
@@ -26,6 +27,10 @@ export default new Router({
   {
     path:'/mag',
     component:Mag
+  },
+  {
+    path:'/musiclist',
+    component:Musiclist
   },
   ]
 })
