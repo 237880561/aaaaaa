@@ -5,6 +5,7 @@ import Music from './views/Music/Music.vue'
 import Book from './views/Book/Book.vue'
 import Mag from './views/Mag/Mag.vue'
 import Musiclist from './views/Music/Musiclist.vue'
+import MovieDetail from './views/Movie/MovieDetail.vue'
 
 Vue.use(Router)
 
@@ -12,6 +13,10 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    {
+      path:'/',
+      redirect:'/movie'
+    },
    {
      path:'/movie',
      component:Movie
@@ -32,5 +37,9 @@ export default new Router({
     path:'/musiclist',
     component:Musiclist
   },
+  {
+    path:'/moviedetail/:movieId',
+    component:MovieDetail
+  }
   ]
 })
