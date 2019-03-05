@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .active{
+        background: red;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(params) {
+                super(params);
+                this.state = {
+                    todos:[
+                        {   id:1,
+                            name:'吃饭',
+                            isActive:false
+                        },
+                        {   id:2,
+                            name:'睡觉',
+                            isActive:false
+                        },
+                        {   id:3,
+                            name:'敲代码',
+                            isActive:true
+                        }
+                    ],
+                    showTodos:[
+                        {   
+                            id:1,
+                            name:'吃饭',
+                            isActive:false
+                        },
+                        {   
+                            id:2,
+                            name:'睡觉',
+                            isActive:false
+                        },
+                        {   
+                            id:3,
+                            name:'敲代码',
+                            isActive:true
+                        }
+                    ]
+    
+                }
+                this.add = this.add.bind(this);
+                this.reduce = this.reduce.bind(this);
+                this.gai = this.gai.bind(this);
+                this.search = this.search.bind(this);
+            }
+         
+            add(val){
+                let todos = [...this.state.todos];
+                todos.push({name:val,isActive:false,id:(new Date()).getTime()});
+                this.setState({
+                    todos,
+                    showTodos:todos
+                })
+
+            }
+            reduce(id){
+                let todos = this.state.todos.filter((obj)=>{
+                    return obj.id!=id
+                })
+                this.setState({
+                    todos,
+                    showTodos:todos
+                })
+
+            }
+            gai(id){
+                let todo = [...this.state.todos];
+                for(let i=0;i<todo.length;i++)
+                if(todo[i].id==id) 
+                    todo[i].isActive = !todo[i].isActive  
+                this.setState({
+                      todos:todo,
+                      showTodos:todo
+               })
+              
+            }
+            search(value){
+             
+                let showTodos = this.state.todos.filter((obj)=>{
+                    return obj.name.includes(value)
+                })
+                this.setState({
+                    showTodos
+                })
+            }
+
+           
+            render(){
+                return (
+                    <div>
+                    <h1>todolist</h1>
+                    <Find search={this.search}></Find>
+                    <Add add= {this.add} ></Add>
+                    <View todos={this.state.showTodos} reduce= {this.reduce} gai= {this.gai}></View>     
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{     
+            constructor(params) {
+                super(params);
+                this.state = {
+                    msg:''
+                }
+                this.change = this.change.bind(this);
+            }   
+            change(event){
+                this.setState({
+                    msg:event.target.value 
+                })
+            }
+            render(){
+                return (
+                    <div>
+                    添加： <input type="text" onChange={this.change}/>   
+                    <button onClick={()=>{this.props.add(this.state.msg)}}>保存任务</button> 
+                    </div>
+                    
+                )
+            }
+        }
+        class View extends React.Component{
+          
+            render(){
+                return (
+                    <ul>
+                        {
+                            this.props.todos.map((task,id) =>{
+                                return <li key={task.id} className={task.isActive?'active':''}>
+                                <input onClick={()=>{this.props.gai(task.id)}} type='checkbox' defaultChecked={task.isActive}/>
+                                {task.name}
+                                <button onClick={()=>{this.props.reduce(task.id)}}>删除</button>
+                                </li>
+                            })
+                        }
+                    </ul>
+                   
+                )
+            }
+        }
+        class Find extends React.Component{
+            render() {
+            return (
+                <div>
+                    <span>搜索：</span>
+                    <input type="text" onChange={
+                        (e)=>{
+                            this.props.search(e.target.value);
+                        }
+                    }/>
+                </div>
+            )
+          }
+        }
+        
+
+        ReactDOM.render(<Main></Main>,document.getElementById('root'))
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
