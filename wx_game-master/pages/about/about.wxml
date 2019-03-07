@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="about">
+  <text>产品名称：小程序扫雷</text>
+  <text>版本号：1.0.0</text>
+  <text>开发时间：2018年9月</text>
+  </view>
+  <view class="about aboutme">
+    <text class="title">作者</text>
+    <text>jiangtong</text>
+    <text class="title">邮箱</text>
+    <text>237880561@qq.com</text>
+    <text class="title">GitHub</text>
+    <text>https://github.com/gavin125</text>
+  </view>
+</view>
