@@ -18,6 +18,38 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      .login_box {
+          width: 600px;
+          height: 400px;
+          background-image:url("./images/img_11.jpg");
+          position: fixed;
+          left: 50%;
+          top: 20%;
+          transform: translateY(-50%);
+          transform: translateX(-50%);
+  
+      }
+      .login_atitle{
+          margin: 10px 0 0 90px;
+          color:slategray;
+      }
+      .login_message{
+          margin: 10px 0 0 150px;
+          color:slategray;
+      }
+      .login_abtn {
+         margin-left: 22%;
+         margin-top:5%
+      }
+      .form-control{
+        width: 500px;
+          margin-top: 20px;
+      }
+      .hhh{
+        margin-left: 25%;
+      }
+      </style>
 
   </head>
   <body>
@@ -42,32 +74,44 @@
             <li class="probootstrap-animate" ><a href="contact.jsp">联系我们</a></li>
           </ul>
         </nav>
-        <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
-          <ul class="list-unstyled d-flex probootstrap-aside-social">
-            <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
-            <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
-            <li><a href="#" class="p-2"><span class="icon-dribbble"></span></a></li>
-          </ul>
-          <p>&copy; <%=TimeConvert.dateToStr(TimeConvert.getSystemTime()) %></p>
-        </footer>
+        <div class="login_box">
+  
+          <form action="Login"  method="post">
+             <div class="login_atitle">
+             
+                 <h3 class="hhh"> 个人密码修改 </h3>
+                 
+             </div>
+             <div class="login_message">
+             
+               <%
+             String msg = (String)request.getAttribute("errormsg");
+             if(msg!=null){
+             out.print("<font color=red >"+msg+"</font>");
+             }
+           %>
+             
+             </div>
+             <div class="input-group mb-3">
+              
+                 <input type="password" class="form-control" placeholder="请输入密码" aria-label="Username" aria-describedby="basic-addon1" name="account"> 
+             </div>
+             <div class="input-group mb-2">
+              
+                 <input type="password" class="form-control" placeholder="请再次输入密码" aria-label="Username" aria-describedby="basic-addon1" name="password">
+             </div>
+             <button type="submit" class="btn btn-outline-success login_abtn" >确认</button>
+             <button type="button" class="btn btn-outline-success login_abtn" onclick="window.location.href='register.jsp'" >取消</button>
+         </form>
+   
+       </div>
+      
       </div>
     </aside>
 
     <main role="main" class="probootstrap-main js-probootstrap-main">
      
-      <div class="card-columns">
-        <%
-        
-         int i = 0;
-         for( i = 1;i<2;i++){
-         %>
-        <div class="card">
-          <a href="single.jsp">
-          <img class="card-img-top probootstrap-animate" src="images/img_<%=i%>.jpg" alt="Card image cap" >
-          </a>
-        </div>
-        <%} %>
-      </div>  
+     
 
     </main>
 
