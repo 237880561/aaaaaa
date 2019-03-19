@@ -5,6 +5,9 @@ var aImg = document.getElementsByTagName('img');
 var oNext = document.getElementById('next');
 var oPrev = document.getElementById('prev'); 
 var oImgBox = document.getElementById('img-box');
+var nnn = document.getElementById('titi2');
+var di = document.getElementById('did');
+
 
 var iNow = 0;
 var timer;
@@ -52,3 +55,10 @@ function run(){
         oNext.onclick();
     },2000)
 }
+nnn.onclick = function(){
+	di.className = 'pt-page-moveToTop';
+
+}
+
+
+

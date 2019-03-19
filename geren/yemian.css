@@ -9,14 +9,15 @@ body{
     height: 2000px;
 }
 #container{
-    width: 750px;
-    height: 400px;
-    margin:100px auto;
+    width: 40%;
+    height: 40%;
+    margin:8% auto;
     position: fixed;
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
     overflow: hidden;
+   
 }
 #img-box{
     width:3750px;
@@ -27,9 +28,53 @@ body{
 /* 图片 */
 #img-box img{
     float: left;
-    width: 750px;
+    width:750px;
     height: 400px;
     
+}
+.view{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-image: url(img/ed25b69962244d1890cb50568dc74fd4.gif);
+
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top :0;
+}
+.view img{
+    width: 40%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+.view .titi1{
+    margin-top: 3%;
+    text-align: center;
+  
+}
+.pt-page-moveFromTop {
+	-webkit-animation: moveFromTop .6s ease both;
+	animation: moveFromTop .6s ease both;
+}
+@-webkit-keyframes moveFromTop {
+	from { -webkit-transform: translateY(-100%); }
+}
+.pt-page-moveToTop {
+	display: none;
+}
+
+.view #titi2{
+    text-align: center;
+    width: 4%;
+    height: 3%;
+    position: absolute;
+    left: 50%;
+    top:90%;
+    transform: translateX(-50%);
 }
 #btn-box li,#arrow-box li{
     float: left;
@@ -63,6 +108,7 @@ body{
     background: url(./img/6.jpg) 
 }
 .title{
+   
     color: black;
     font-size: 40px;
     margin-left: 50%;
@@ -74,6 +120,9 @@ body{
     margin-left: 5%;
 }
 .test li{
+    width: 120px;
+    height: 25px;
+    background: #7d5585;
      margin: 2% 5%;
      
 }
