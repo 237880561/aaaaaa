@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body onload="startTime()">
+<div id="game">
+<div id="bird"></div>
+<div id="txt">分数</div>
+<audio  autoplay="autoplay"> 
+    <source src="imgs/2.1.mp3" type="audio/ogg" /> 
+    <source src="imgs/2.1.mp3" type="audio/mpeg" />
+    </audio>
+
+</div>
+<script src="2.1.js"></script>
+</body>
+</html>
+<style>
+    body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            background: url(imgs/2.0.jpg);
+            position: absolute;
+            left: 50%;
+       
+            transform: translateX(-50%);
+            overflow: hidden;
+           
+        }
+
+         #game .pipeD {
+            background: url(imgs/2.0.jpg) center;
+            background-size: cover;
+            position: absolute;
+            border-radius: 10px;
+        } 
+
+        #game .pipeU {
+            background: url(imgs/2.0.jpg) center;
+            background-size: cover;
+            position: absolute;
+        }
+
+        #bird {
+            width: 34px;
+            height: 25px;
+           
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background: url(imgs/2.1.jpg) center;
+            background-size: cover;
+           
+        
+        }
+        #txt{
+            width: 50px;
+            height: 30px;
+            background: wheat;
+            position: absolute;
+            z-index: 2;
+            left: 80%;
+            top: 2%
+        }
+</style>
