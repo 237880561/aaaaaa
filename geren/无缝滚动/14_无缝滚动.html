@@ -11,23 +11,44 @@
             padding: 0;
         }
         #content{
-            width: 400px;
-            height: 200px;
-            border:1px solid #000;
+            width: 200px;
+            height: 120px;
+            border:5px solid red;
             margin:100px auto;
             overflow: hidden;
             position: relative;
+        }
+        #content:hover{
+            background: black
+            ;
         }
         #num-box{
             list-style: none;
             width:520px;
             position: absolute;
         }
-        li{
+        #l11{
+           
+           
+            background-image: url(img/h.gif);
             width: 120px;
             height: 120px;
-            margin-right: 10px;
-            background: pink;
+            float: left;
+        }
+        #l22{
+           
+            background-image: url(img/i.gif);
+            width: 120px;
+            height: 120px;
+           
+            float: left;
+        }
+        #l33{
+         
+           
+            background-image: url(img/j.gif);
+            width: 120px;
+            height: 120px;
             float: left;
         }
         #btn-box{
@@ -44,15 +65,12 @@
 <body>
     <div id="content">
         <ul id="num-box">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+            <li id="l11"1</li>
+            <li id="l22">2</li>
+            <li id="l33">3</li>
+           
         </ul>
-        <div id="btn-box">
-            <span id="left">向左</span>
-            <span id="right">向右</span>
-        </div>
+       
     </div>
     <script>
         var oNumBox = document.getElementById('num-box');
@@ -68,17 +86,18 @@
             // left 值 小于等于 宽度的一半的时候  left设置成0
             if(oNumBox.offsetLeft <= -oNumBox.offsetWidth/2){
                 oNumBox.style.left = 0;
+                speed = -3;
             }
             if( oNumBox.offsetLeft > 0){
                 oNumBox.style.left = -oNumBox.offsetWidth/2 +"px";
             }
         },20);
-        oRight.onclick = function(){
-            speed = 3;
-        }
-        oLeft.onclick = function(){
-            speed = -3;
-        }
+        // oRight.onclick = function(){
+        //     speed = 3;
+        // }
+        // oLeft.onclick = function(){
+        //     speed = -3;
+        // }
 
 
 

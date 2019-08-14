@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 第一题 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #img1{
+            height: 20rem;
+            width: 30rem;
+            background:cadetblue;
+            float: left;
+         
+            
+        }
+        #img2{
+            height: 5rem;
+            width: 7.5rem;
+            background: pink;
+            position: absolute;
+            left: 7.5rem;
+            top: 5rem;
+        }
+        #img3{
+            height: 1.25rem;
+            width: 1.875rem;
+            background: green;
+            position: absolute;
+            left:50%;
+            top:50%;
+           transform: translate(-50%,-50%)
+          
+        
+        }
+    #title{
+       
+        font-size: 20px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:2;
+        overflow:hidden;
+        margin-top: 2rem;
+        margin-bottom: 10rem;
+       
+    }
+    #right{
+        margin-left: 1rem;
+        width: 45rem;
+        float: left;
+    }
+    #cont{
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:1;
+        overflow:hidden;
+        width: 40rem;
+        float: left;
+       
+
+    }
+    #mag{
+        float: left;
+
+    }
+    #heng{
+      
+      border: 1px solid black;
+      margin-top: 4.9rem;
+    }
+    #shu{
+      border: 1px solid black;
+      margin-left: 7.4rem;
+      margin-top: -4.9rem;
+      height: 20rem;
+      width: 0;
+
+    }
+    
+    </style>
+    <div>
+       
+       
+      <div id="img1">
+      <div id="heng"></div>
+      <div id="shu"></div>
+          <div id="img2">
+              <div id="img3">
+
+              </div>
+          </div>
+
+      </div>
+      <div id="right">
+      <div id="title">
+          测试标题，最多两行，一溢出隐藏 ，测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏
+          测试标题，最多两行，一溢出隐藏 ，测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏
+       
+      </div>
+     
+      <div id="cont">
+            测试标题，最多两行，一溢出隐藏 ，测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏， 测试标题，最多两行，一溢出隐藏
+           
+      </div>
+      <span id="mag">广告</span>
+    </div>
+
+    </div>
+    <script>
+
+        // 第二题  不会写想了半天 - -。。
+
+const list=[
+
+{"id":19,"parentId":0},
+
+{"id":17,"parentId":16},
+
+{"id":18,"parentId":16},
+
+{"id":16,"parentId":0}
+
+]
+
+// function convert(list)
+// {
+//     var tree =[];
+//     for(var i=0;i<list.length;i++)
+//     console.log(list[i][id])
+
+// }
+// convert(list);
+
+
+
+
+
+// 第三题
+
+    //   const arr =[1,5,3,2,9,3,3,5,13];
+    //   function aa(array){
+    //      return Array.from(new Set(array));
+    //   }
+    //  console.log( aa(arr));
+
+    function aa(array){
+        var reslt=[];
+        var lastval=array[0]
+        reslt.push(array[0]);
+        array.sort();
+        for(var i=0;i<array.length;i++){
+           if(lastval!=array[i]){
+            lastval=array[i];
+            reslt.push(lastval);
+           }
+        }
+        return  reslt
+    }
+    const arr =[1,5,3,2,9,3,3,5,13];
+    console.log( aa(arr));
+    </script>
+</body>
+</html>
